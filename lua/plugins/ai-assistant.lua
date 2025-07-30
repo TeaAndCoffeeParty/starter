@@ -1,7 +1,7 @@
 -- DeepSeek plugin example
 
 return {
-  "TeaAndCoffeeParty/deepseek.nvim",
+  "TeaAndCoffeeParty/ai-assistant.nvim",
   opts = {
     enabled = true,
     window = { width = 0.6, height = 0.8, split_ratio = 0.2 },
@@ -12,6 +12,6 @@ return {
     "nvim-lua/plenary.nvim",
   },
   config = function(_, opts)
-    require("deepseek").setup(opts)
+    require("ai-assistant").setup(opts)
   end,
 }
