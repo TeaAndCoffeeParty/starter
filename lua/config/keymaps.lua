@@ -14,3 +14,6 @@ vim.api.nvim_set_keymap("n", "<leader>ms", ":CMakeSelectLaunchTarget<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>mS", ":CMakeSelectBuildTarget<CR>", opts) -- Select Build Target
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- 在插入模式下，用 jk 退出
+vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode" })
