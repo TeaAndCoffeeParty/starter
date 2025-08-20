@@ -2,16 +2,19 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- CMake Tools 快捷键
-local opts = { noremap = true, silent = true }
+-- ✅ 使用 add() 手动添加映射，并精确控制 icon
+local wk = require("which-key")
+wk.add({
+  { "<leader>m", group = "CMake", icon = "" }, -- 设置分组图标
 
-vim.api.nvim_set_keymap("n", "<leader>mg", ":CMakeGenerate<CR>", opts) -- Generate (对应 cmake ../Step1)
-vim.api.nvim_set_keymap("n", "<leader>mb", ":CMakeBuild<CR>", opts) -- Build (对应 cmake --build .)
-vim.api.nvim_set_keymap("n", "<leader>mr", ":CMakeRun<CR>", opts) -- Run (对应 ./Tutorial)
-vim.api.nvim_set_keymap("n", "<leader>mc", ":CMakeClean<CR>", opts) -- Clean
-vim.api.nvim_set_keymap("n", "<leader>mt", ":CMakeRunTest<CR>", opts) -- Run Test (ctest -R xx)
-vim.api.nvim_set_keymap("n", "<leader>ms", ":CMakeSelectLaunchTarget<CR>", opts) -- Select Launch Target
-vim.api.nvim_set_keymap("n", "<leader>mS", ":CMakeSelectBuildTarget<CR>", opts) -- Select Build Target
+  { "<leader>mg", ":CMakeGenerate<CR>", desc = "Generate", icon = "🛠", mode = "n" },
+  { "<leader>mb", ":CMakeBuild<CR>", desc = "Build", icon = "📦", mode = "n" },
+  { "<leader>mr", ":CMakeRun<CR>", desc = "Run", icon = "🚀", mode = "n" },
+  { "<leader>mc", ":CMakeClean<CR>", desc = "Clean", icon = "🗑", mode = "n" },
+  { "<leader>mt", ":CMakeRunTest<CR>", desc = "Test", icon = "🧪", mode = "n" },
+  { "<leader>ms", ":CMakeSelectLaunchTarget<CR>", desc = "Launch Target", icon = "🎯", mode = "n" },
+  { "<leader>mS", ":CMakeSelectBuildTarget<CR>", desc = "Build Target", icon = "⚙ ", mode = "n" },
+})
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
