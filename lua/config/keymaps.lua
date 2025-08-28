@@ -21,7 +21,23 @@ wk.add({
   { "<leader>al", ":ChatCurrentLine<CR>", desc = "Send Current Line", icon = "🔢", mode = "n" },
   { "<leader>af", ":ChatFile<CR>", desc = "Send Entire File", icon = "📁", mode = "n" },
   { "<leader>ah", ":ChatShowHistory<CR>", desc = "Show History", icon = "📜", mode = "n" },
-  { "<leader>ac", ":ChatClearHistory<CR>", desc = "Clear History", icon = "🗑", mode = "n" },
+  {
+    "<leader>ac",
+    function()
+      local choice = vim.fn.confirm("是否要清除聊天历史记录?", "&Yes\n&No")
+
+      if choice == 1 then
+        vim.cmd("ChatClearHistory")
+        vim.notify("聊天历史记录已清除。", vim.log.levels.INFO)
+      else
+        -- 用户选择了 'No'，不执行任何操作
+        vim.notify("清除聊天历史记录操作已取消。", vim.log.levels.INFO)
+      end
+    end,
+    desc = "Clear History (with confirmation)", -- 建议更新描述，表明有确认
+    icon = "🗑",
+    mode = "n",
+  },
   { "<leader>ap", ":ChatClearPrompt<CR>", desc = "Clear Prompt Context", icon = "🧹", mode = "n" },
   { "<leader>am", ":ChatSelectModel<CR>", desc = "Select AI Model", icon = "🧠", mode = "n" },
   -- Visual 模式
