@@ -8,7 +8,7 @@ return {
           direction = "float",
           close_on_exit = false,
           auto_scroll = true,
-          signleton = true,
+          singleton = true,
         },
       },
     },
