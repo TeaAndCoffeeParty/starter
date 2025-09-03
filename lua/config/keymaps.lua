@@ -43,6 +43,10 @@ wk.add({
   { "<leader>am", ":ChatSelectModel<CR>", desc = "Select AI Model", icon = "🧠", mode = "n" },
   -- Visual 模式
   { "<leader>av", ":ChatVisual<CR>", desc = "Send Visual Selection", icon = "🔍", mode = "v" },
+
+  -- C++ Helper 分组 (这是我们新加的)
+  { "<leader>c", group = "C++/Code", icon = "" },
+  { "<leader>cg", "<cmd>CppHelperCreateDef<cr>", desc = "Create Definition", mode = "n" },
 })
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
