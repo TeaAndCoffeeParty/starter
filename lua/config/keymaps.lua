@@ -46,7 +46,7 @@ wk.add({
 
   -- C++ Helper 分组 (这是我们新加的)
   { "<leader>c", group = "C++/Code", icon = "" },
-  { "<leader>cg", "<cmd>CppHelperCreateDef<cr>", desc = "Create Definition", mode = "n" },
+  { "<leader>cg", "<Cmd>ImplementInSource<CR>", desc = "Create Definition", mode = "n" },
 })
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
