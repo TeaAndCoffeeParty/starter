@@ -20,7 +20,7 @@ return {
                 local f = io.open(check_path, "r")
                 if f then
                   f:close()
-                  print("--- CUSTOM FIND_ROOT SUCCESS! Found: " .. check_path .. " at root: " .. path)
+                  -- print("--- CUSTOM FIND_ROOT SUCCESS! Found: " .. check_path .. " at root: " .. path)
                   return path -- 找到了，返回当前目录作为根目录
                 end
               end
