@@ -6,8 +6,8 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 ## Fist install command in ubuntu
 
 ```shell
-sudo apt install curl xclip git clang-format-19 fzf make 
-sudo apt install gcc g++ golang-go ripgrep npm
+sudo apt install curl xclip git clang-format-19 fzf make cmake cpplint build-essential ninja-build pkg-config
+sudo apt install gcc g++ golang-go ripgrep npm sqlite3 libsqlite3-dev fd-find
 
 # lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
