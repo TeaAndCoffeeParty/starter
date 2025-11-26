@@ -50,9 +50,66 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "c", "cpp", "cxx", "objc", "objcpp", "cuda" },
   callback = function()
     wk.add({
-      { "<leader>c", group = "C++/Code", icon = "" },
-      { "<leader>cg", "<Cmd>ImplementInSource<CR>", desc = "Create Definition", mode = "n" },
-      { "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Header/Source", icon = "", mode = "n" },
+      { "<leader>c", group = "C++/Code", icon = "", buffer = true },
+      { "<leader>cg", "<Cmd>ImplementInSource<CR>", desc = "Create Definition", mode = "n", buffer = true },
+      {
+        "<leader>ch",
+        "<cmd>ClangdSwitchSourceHeader<cr>",
+        desc = "Switch Header/Source",
+        icon = "",
+        mode = "n",
+        buffer = true,
+      },
+      {
+        "<leader>ca",
+        function()
+          vim.lsp.buf.code_action()
+        end,
+        desc = "Code Action",
+        icon = "💡",
+        mode = { "n", "v" },
+        buffer = true,
+      },
+      {
+        "<leader>ci",
+        function()
+          vim.lsp.buf.implementation()
+        end,
+        desc = "Go to Implementation",
+        icon = "",
+        mode = "n",
+        buffer = true,
+      },
+      {
+        "<leader>cr",
+        function()
+          vim.lsp.buf.rename()
+        end,
+        desc = "Rename Symbol",
+        icon = "",
+        mode = "n",
+        buffer = true,
+      },
+      {
+        "<leader>cu",
+        function()
+          vim.lsp.buf.references()
+        end,
+        desc = "Find References",
+        icon = "",
+        mode = "n",
+        buffer = true,
+      },
+      {
+        "<leader>ct",
+        function()
+          vim.lsp.buf.type_definition()
+        end,
+        desc = "Go to Type Definition",
+        icon = "",
+        mode = "n",
+        buffer = true,
+      },
     })
   end,
 })
