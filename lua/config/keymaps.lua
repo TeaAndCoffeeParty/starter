@@ -43,13 +43,20 @@ wk.add({
   { "<leader>am", ":ChatSelectModel<CR>", desc = "Select AI Model", icon = "🧠", mode = "n" },
   -- Visual 模式
   { "<leader>av", ":ChatVisual<CR>", desc = "Send Visual Selection", icon = "🔍", mode = "v" },
+})
 
-  -- C++ Helper 分组 (这是我们新加的)
-  { "<leader>c", group = "C++/Code", icon = "" },
-  { "<leader>cg", "<Cmd>ImplementInSource<CR>", desc = "Create Definition", mode = "n" },
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("user_cpp_keymaps", { clear = true }),
+  pattern = { "c", "cpp", "cxx", "objc", "objcpp", "cuda" },
+  callback = function()
+    wk.add({
+      { "<leader>c", group = "C++/Code", icon = "" },
+      { "<leader>cg", "<Cmd>ImplementInSource<CR>", desc = "Create Definition", mode = "n" },
+      { "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Header/Source", icon = "", mode = "n" },
+    })
+  end,
 })
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
 -- 在插入模式下，用 jk 退出
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode" })
