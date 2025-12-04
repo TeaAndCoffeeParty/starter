@@ -19,6 +19,7 @@ wk.add({
   -- ai-assistant
   { "<leader>a", group = "AI Assistant", icon = "󰭹" },
   { "<leader>ao", ":Chat<CR>", desc = "Open Chat", icon = "💬", mode = "n" },
+  { "<leader>aq", ":ChatClose<CR>", desc = "Close Chat", icon = "❌", mode = "n" },
   { "<leader>al", ":ChatCurrentLine<CR>", desc = "Send Current Line", icon = "🔢", mode = "n" },
   { "<leader>af", ":ChatFile<CR>", desc = "Send Entire File", icon = "📁", mode = "n" },
   { "<leader>ah", ":ChatShowHistory<CR>", desc = "Show History", icon = "📜", mode = "n" },
