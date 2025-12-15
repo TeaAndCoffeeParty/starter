@@ -24,6 +24,24 @@ wk.add({
   { "<leader>af", ":ChatFile<CR>", desc = "Send Entire File", icon = "📁", mode = "n" },
   { "<leader>ah", ":ChatShowHistory<CR>", desc = "Show History", icon = "📜", mode = "n" },
   {
+    "<leader>ad",
+    function()
+      vim.ui.input({
+        prompt = "Enter folder path (default: current directory): ",
+        default = ".",
+        completion = "dir",
+      }, function(input)
+        if input ~= nil then
+          local folder_path = input ~= "" and input or "."
+          vim.cmd("ChatFolder " .. folder_path)
+        end
+      end)
+    end,
+    desc = "Send Folder Content (.h/.cpp)",
+    icon = "📂",
+    mode = "n",
+  },
+  {
     "<leader>ac",
     function()
       local choice = vim.fn.confirm("是否要清除聊天历史记录?", "&Yes\n&No")
