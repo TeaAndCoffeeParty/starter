@@ -31,7 +31,14 @@ vim.api.nvim_create_autocmd("User", {
     -- 使用 VS Code CMake Tools 扩展的命令
     vim.keymap.set("n", "<leader>mg", "<Cmd>call VSCodeNotify('cmake.configure')<CR>", { desc = "CMake Configure" })
     vim.keymap.set("n", "<leader>mb", "<Cmd>call VSCodeNotify('cmake.build')<CR>", { desc = "CMake Build" })
-    vim.keymap.set("n", "<leader>mr", "<Cmd>call VSCodeNotify('cmake.run')<CR>", { desc = "CMake Run" })
+    vim.keymap.set("n", "<leader>mr", "<Cmd>call VSCodeNotify('cmake.runTarget')<CR>", { desc = "CMake Run Target" })
+    vim.keymap.set("n", "<leader>mc", "<Cmd>call VSCodeNotify('cmake.clean')<CR>", { desc = "CMake Clean" })
+    vim.keymap.set(
+      "n",
+      "<leader>ms",
+      "<Cmd>call VSCodeNotify('cmake.setBuildType')<CR>",
+      { desc = "CMake Set Build Type" }
+    )
     -- 其他命令可参考 VS Code CMake Tools 的命令列表（如 'cmake.clean'、'cmake.setBuildType' 等）
   end,
 })
