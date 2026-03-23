@@ -3,7 +3,10 @@
 -- Add any additional keymaps here
 
 -- ✅ 使用 add() 手动添加映射，并精确控制 icon
-local wk = require("which-key")
+local wk = pcall(require, "which-key") and require("which-key") or nil
+if not wk then
+  return -- 如果 which-key 未加载，直接退出，不配置
+end
 wk.add({
   { "<leader>m", group = "CMake", icon = "" }, -- 设置分组图标
 
