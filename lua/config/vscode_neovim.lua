@@ -10,7 +10,7 @@ vim.g.which_key_disabled = 1
 vim.api.nvim_create_autocmd("User", {
   pattern = "VeryLazy",
   callback = function()
-    -- 切换主侧边栏（资源管理器）
+    -- === 文件浏览器 ===
     pcall(vim.keymap.del, "n", "<leader>e")
     vim.keymap.set(
       "n",
@@ -19,7 +19,12 @@ vim.api.nvim_create_autocmd("User", {
       { desc = "Focus Side Bar" }
     )
 
-    -- 切换副侧边栏（聊天/输出）
+    -- === Git 源代码管理 ===
+    pcall(vim.keymap.del, "n", "<leader>gg")
+    vim.keymap.set("n", "<leader>gg", "<Cmd>call VSCodeNotify('workbench.view.scm')<CR>", { desc = "Open Source Control", silent = true })
+
+
+    -- === 切换副侧边栏（聊天/输出） ===
     pcall(vim.keymap.del, "n", "<leader>ao")
     vim.keymap.set(
       "n",
@@ -28,7 +33,7 @@ vim.api.nvim_create_autocmd("User", {
       { desc = "Toggle Secondary Side Bar" }
     )
 
-    -- 使用 VS Code CMake Tools 扩展的命令
+    -- === 使用 VS Code CMake Tools 扩展的命令 ===
     vim.keymap.set("n", "<leader>mg", "<Cmd>call VSCodeNotify('cmake.configure')<CR>", { desc = "CMake Configure" })
     vim.keymap.set("n", "<leader>mb", "<Cmd>call VSCodeNotify('cmake.build')<CR>", { desc = "CMake Build" })
     vim.keymap.set("n", "<leader>mr", "<Cmd>call VSCodeNotify('cmake.runTarget')<CR>", { desc = "CMake Run Target" })
@@ -39,6 +44,5 @@ vim.api.nvim_create_autocmd("User", {
       "<Cmd>call VSCodeNotify('cmake.setBuildType')<CR>",
       { desc = "CMake Set Build Type" }
     )
-    -- 其他命令可参考 VS Code CMake Tools 的命令列表（如 'cmake.clean'、'cmake.setBuildType' 等）
   end,
 })

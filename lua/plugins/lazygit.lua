@@ -1,6 +1,7 @@
 -- lazygit.lua
 return {
   "kdheepak/lazygit.nvim",
+  enabled = not vim.g.vscode, 
   lazy = true,
   cmd = {
     "LazyGit",
