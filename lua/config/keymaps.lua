@@ -15,6 +15,7 @@ wk.add({
   { "<leader>ms", ":CMakeSelectLaunchTarget<CR>", desc = "Launch Target", icon = "🎯", mode = "n" },
   { "<leader>mS", ":CMakeSelectBuildTarget<CR>", desc = "Build Target", icon = "⚙ ", mode = "n" },
   { "<leader>mB", ":CMakeSelectBuildType<CR>", desc = "Select Build Type", icon = "🔧", mode = "n" },
+  { "<leader>mP", ":CMakeSelectBuildPreset<CR>", desc = "Select Build Preset", icon = "📐", mode = "n" },
 
   -- ai-assistant
   { "<leader>a", group = "AI Assistant", icon = "󰭹" },
