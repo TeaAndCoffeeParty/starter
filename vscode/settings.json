@@ -85,6 +85,15 @@
             "max_tokens": 4096,
             "apiMode": "openai",
             "temperature": 0
+        },
+        {
+            "id": "deepseek-reasoner",
+            "owned_by": "DeepSeek",
+            "baseUrl": "https://api.deepseek.com/v1",
+            "context_length": 128000,
+            "max_tokens": 4096,
+            "apiMode": "openai",
+            "temperature": 0
         }
     ],
     "oaicopilot.baseUrl": "https://router.huggingface.co/v1",
@@ -133,4 +142,11 @@
             ]
         }
     ],
+    "Lingma.DisplayLanguage": "简体中文",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
 }
