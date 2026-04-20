@@ -1,6 +1,6 @@
 @echo off
 set "VSC_USER=%APPDATA%\Code\User"
-set "TARGET_DIR=C:\Users\%USERNAME%\AppData\Local\nvim\vscode"
+set "TARGET_DIR=%LOCALAPPDATA%\nvim\vscode"
 
 :: 1. 创建目标目录（如果不存在）
 if not exist "%TARGET_DIR%" mkdir "%TARGET_DIR%"
