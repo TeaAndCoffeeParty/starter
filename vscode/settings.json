@@ -98,5 +98,39 @@
     },
     "oaicopilot.commitLanguage": "English",
     "chat.viewSessions.orientation": "stacked",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    //for vim plugin
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<space>",
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.easymotion": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-p>": false,
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "C_Cpp.clang_format_style": "file",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "H"
+            ],
+            "after": [],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        }
+    ],
 }
