@@ -1,0 +1,102 @@
+{
+    "window.autoDetectColorScheme": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "oaicopilot.models": [
+        {
+            "id": "__provider__DeepSeek",
+            "owned_by": "DeepSeek",
+            "baseUrl": "https://api.deepseek.com/v1",
+            "apiMode": "openai"
+        },
+        {
+            "id": "__provider__DashScope",
+            "owned_by": "DashScope",
+            "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "apiMode": "openai"
+        },
+        {
+            "id": "__provider__ModelScope",
+            "owned_by": "ModelScope",
+            "baseUrl": "https://api-inference.modelscope.cn/v1",
+            "apiMode": "openai"
+        },
+        {
+            "id": "deepseek-chat",
+            "owned_by": "DeepSeek",
+            "baseUrl": "https://api.deepseek.com/v1",
+            "context_length": 128000,
+            "max_tokens": 4096,
+            "apiMode": "openai",
+            "temperature": 0
+        },
+        {
+            "id": "moonshotai/Kimi-K2.5",
+            "owned_by": "ModelScope",
+            "baseUrl": "https://api-inference.modelscope.cn/v1",
+            "context_length": 128000,
+            "max_tokens": 4096,
+            "apiMode": "openai",
+            "temperature": 0
+        },
+        {
+            "id": "qwen3-coder-next",
+            "owned_by": "DashScope",
+            "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "context_length": 128000,
+            "max_tokens": 4096,
+            "apiMode": "openai",
+            "temperature": 0
+        },
+        {
+            "id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+            "owned_by": "ModelScope",
+            "baseUrl": "https://api-inference.modelscope.cn/v1",
+            "context_length": 128000,
+            "max_tokens": 4096,
+            "apiMode": "openai",
+            "temperature": 0,
+            "useForCommitGeneration": true
+        },
+        {
+            "id": "ZhipuAI/GLM-4.7-Flash",
+            "owned_by": "ModelScope",
+            "baseUrl": "https://api-inference.modelscope.cn/v1",
+            "context_length": 128000,
+            "max_tokens": 4096,
+            "apiMode": "openai",
+            "temperature": 0
+        },
+        {
+            "id": "ZhipuAI/GLM-5",
+            "owned_by": "ModelScope",
+            "baseUrl": "https://api-inference.modelscope.cn/v1",
+            "context_length": 128000,
+            "max_tokens": 4096,
+            "apiMode": "openai",
+            "temperature": 0
+        },
+        {
+            "id": "deepseek-ai/DeepSeek-V3.2",
+            "owned_by": "ModelScope",
+            "baseUrl": "https://api-inference.modelscope.cn/v1",
+            "context_length": 128000,
+            "max_tokens": 4096,
+            "apiMode": "openai",
+            "temperature": 0
+        }
+    ],
+    "oaicopilot.baseUrl": "https://router.huggingface.co/v1",
+    "oaicopilot.delay": 0,
+    "oaicopilot.readFileLines": 0,
+    "oaicopilot.retry": {
+        "enabled": true,
+        "max_attempts": 3,
+        "interval_ms": 1000,
+        "status_codes": []
+    },
+    "oaicopilot.commitLanguage": "English",
+    "chat.viewSessions.orientation": "stacked",
+    "editor.formatOnSave": true
+}
