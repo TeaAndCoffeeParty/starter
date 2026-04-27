@@ -3,6 +3,10 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = { "alfaix/neotest-gtest" },
+    --- Windows 下禁用 Neotest（避免卡顿等问题）；macOS/Linux 照常加载。
+    enabled = function()
+      return vim.fn.has("win32") ~= 1
+    end,
     opts = function(_, opts)
       local lib = require("neotest.lib")
       local is_win = vim.fn.has("win32") == 1
