@@ -61,8 +61,12 @@ wk.add({
   },
   { "<leader>ap", ":ChatClearPrompt<CR>", desc = "Clear Prompt Context", icon = "🧹", mode = "n" },
   { "<leader>am", ":ChatSelectModel<CR>", desc = "Select AI Model", icon = "🧠", mode = "n" },
+  { "<leader>at", ":ChatToggleThinking<CR>", desc = "Toggle Thinking", icon = "🤔", mode = "n" },
   -- Visual 模式
   { "<leader>av", ":ChatVisual<CR>", desc = "Send Visual Selection", icon = "🔍", mode = "v" },
+
+  -- Using Copilot generate commit
+  { "<leader>gc", "<cmd>CommitMate<CR>", desc = "AI Commit Message", icon = "✨", mode = "n" },
 })
 
 vim.api.nvim_create_autocmd("FileType", {
